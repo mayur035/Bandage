@@ -15,7 +15,6 @@
 #container {
     width: 90%;
     border: 2px solid red;
-    height: 100%;
     margin: auto;
 }
 
@@ -131,10 +130,116 @@
 }
 
 .hero-section {
+    position: relative;
+    display: flex;
     width: 100%;
     height: 716px;
-    border: 2px solid blue;
+    align-items: center;
+    justify-content: center;
 }
+
+.hero-section .carousal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero-section .carousal img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.hero-section .carousal .carousal_item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    /* height: 651px; */
+    z-index: 2;
+}
+
+.hero-section .carousal .carousal_item .carousal_content {
+    width: 100%;
+    /* height: 331px; */
+    gap: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+}
+
+.hero-section .carousal .carousal_item .carousal_content h5 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    text-align: left;
+
+}
+
+.hero-section .carousal .carousal_item .carousal_content h1 {
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    text-align: left;
+
+}
+
+.hero-section .carousal .carousal_item .carousal_content h4 {
+    width: 60%;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    text-align: left;
+
+}
+
+.hero-section .carousal .carousal_item .carousal_content button {
+    display: flex;
+    width: 221px;
+    height: 62px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    gap: 10px;
+    background: #2DC071;
+    color: white;
+    border: none;
+    font-size: 24px;
+
+}
+
+.hero-section .arrow {
+    position: absolute;
+    cursor: pointer;
+}
+
+.hero-section .arrow.right {
+    transform: rotate(180deg);
+}
+
+.left {
+    left: 0;
+    z-index: 1;
+}
+
+.right {
+    right: 0;
+    z-index: 1;
+}
+
 
 
 /* BREAKOUT POINTS */
@@ -158,6 +263,7 @@
     .navbar .navbar-light .right-menu .options.responsive {
         position: absolute;
         display: block;
+        z-index: 999;
         left: 0;
         width: 100%;
         background-color: #FFFFFF;
@@ -189,11 +295,13 @@
 
     .navbar .navbar-light .right-menu .options.responsive ul {
         flex-direction: column;
-        padding:20px;
+        padding: 20px;
     }
+
     .navbar .navbar-light .right-menu {
         flex-grow: 0;
     }
+
     .navbar .navbar-light .right-menu .options .menu ul {
         gap: 20px;
     }
@@ -209,8 +317,47 @@
 
 }
 
+@media (max-width:635px) {
+    .hero-section .carousal .carousal_item .carousal_content h1 {
+        font-size: 8vw;
+    }
+
+}
+
 @media (max-width:500px) {
     .navbar .navbar-dark {
         display: none;
+    }
+
+    .hero-section .carousal .carousal_item .carousal_content h4 {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+    }
+
+    .hero-section .carousal .carousal_item .carousal_content h1 {
+        font-size: 10vw;
+        line-height: 30px;
+    }
+
+    .hero-section .carousal .carousal_item .carousal_content button {
+        height: auto;
+        width: auto;
+        font-size: 19px;
+    }
+}
+
+@media (max-width:300px) {
+.navbar img{
+    width: 70px;
+}
+
+.navbar .navbar-light{
+    padding: 0;
+}
+
+    .hero-section .carousal .carousal_item .carousal_content h1 {
+        /* font-size: 10vw; */
+        line-height: 40px;
     }
 }
